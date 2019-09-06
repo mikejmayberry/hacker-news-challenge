@@ -1,0 +1,12 @@
+.sidebar {
+    width: 200px;
+    float: left;
+    background-color: steelblue;
+    height: 90vh;
+}
+
+.sidebar-link {
+    width: 45px;
+    padding: 10px;
+    margin: 30px;
+}

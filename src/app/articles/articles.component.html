@@ -1,0 +1,14 @@
+<div class="articles">
+  <ol>
+    <li *ngFor="let storyId of storyIds | slice:start:stop">
+      <app-article [id]="storyId"></app-article>
+    </li>
+  </ol>
+</div>
+<div class="articles-pagination">
+  Story
+  <button [disabled]="start < 2" (click)="changePage(true)"> < {{start}}</button>
+  Through
+  <button [disabled]="stop >= storyIds.length" (click)="changePage(false)">{{stop-1}} > </button>
+  Of {{storyIds.length}}
+</div>
