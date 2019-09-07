@@ -1,0 +1,17 @@
+
+<div *ngIf="stories"class="articles">
+  <ol>
+    <li *ngFor="let story of stories | slice:start:stop">
+      <app-article [id]="story.id"></app-article>
+    </li>
+  </ol>
+</div>
+<div *ngIf="stories" class="articles-pagination">
+  Story
+  <button [disabled]="start < 2" (click)="changePage(true)"> <= {{start+1}}</button>
+  Through
+  <button [disabled]="stop >= stories.length" (click)="changePage(false)">{{stop}} => </button>
+  Of {{stories.length}} Search Results
+
+</div>
+<div *ngIf="!stories">  Your Search Yielded No Results In This Category </div>

@@ -8,11 +8,14 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { HackerNewsApiService } from './shared/services/hackernews.api.service';
 import { HackerNewsCacheService } from './shared/services/hackernews.cache.service';
+import { HackerNewsSearchService } from './shared/services/hackernews.search.service.';
 
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { ArticleComponent } from './article/article.component';
+import { SearchArticlesComponent } from './search-articles/search-articles.component';
+
 
 
 @NgModule({
@@ -28,11 +31,13 @@ import { ArticleComponent } from './article/article.component';
     AppComponent,
     SidebarComponent,
     ArticlesComponent,
-    ArticleComponent
+    ArticleComponent,
+    SearchArticlesComponent
   ],
   providers: [
     HackerNewsApiService,
-    HackerNewsCacheService
+    HackerNewsCacheService,
+    HackerNewsSearchService
   ],
   bootstrap: [ AppComponent ]
 })

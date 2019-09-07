@@ -13,13 +13,17 @@ export class ArticlesComponent implements OnInit {
     return this.hackerNewsCacheService.storyIds;
   }
 
-  public start = 1;
-  public stop = 7;
+  public get currentType() {
+    return this.hackerNewsCacheService.currentType();
+  }
+
+  public start = 0;
+  public stop = 6;
 
   constructor(private hackerNewsCacheService: HackerNewsCacheService) { }
 
   ngOnInit() {
-    this.hackerNewsCacheService.init();
+
   }
 
   public changePage(forward: boolean) {
@@ -30,7 +34,7 @@ export class ArticlesComponent implements OnInit {
       }
       advanceBy *= -1;
     } else if (this.storyIds.length - this.stop < advanceBy) {
-      advanceBy = (this.storyIds.length - this.stop) - 1;
+      advanceBy = (this.storyIds.length - this.stop)+1;
     }
     this.start += advanceBy;
     this.stop += advanceBy;

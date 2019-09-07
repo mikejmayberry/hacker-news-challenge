@@ -1,14 +1,43 @@
 
 <div class="sidebar">
   <div class="sidebar-link">
-    <button>Latest</button>
+    <button [ngClass]="{disabled: articleType == 'beststories'}"
+            [disabled]="articleType == 'beststories'"
+            (click)="changeType('Best')">Best</button>
   </div>
-  <!--<div class="sidebar-link">
-
-    <button>Latest</button>
-  </div>-->
+  <div class="sidebar-link">
+    <button [ngClass]="{disabled: articleType == 'topstories'}"
+            [disabled]="articleType == 'topstories'"
+            (click)="changeType('Top')">Top</button>
+  </div>
+  <div class="sidebar-link">
+    <button [ngClass]="{disabled: articleType == 'newstories'}"
+            [disabled]="articleType =='newstories'"
+            (click)="changeType('New')">New</button>
+  </div>
+  
+  <div class="sidebar-link">
+    <button [ngClass]="{disabled: articleType == 'askstories'}"
+            [disabled]="articleType == 'askstories'"
+            (click)="changeType('Ask')">Ask</button>
+  </div>
+  <div class="sidebar-link">
+    <button [ngClass]="{disabled: articleType == 'showstories'}"
+            [disabled]="articleType == 'showstories'"
+            (click)="changeType('Show')">Show</button>
+  </div>
+  <div class="sidebar-link">
+    <button [ngClass]="{disabled: articleType == 'jobstories'}"
+            [disabled]="articleType =='jobstories'"
+            (click)="changeType('Job')">Job</button>
+  </div>
+  <div class="sidebar-link">
+    <button (click)="search()" [disabled]="!searchTerm">Search</button>
+    <div class="search-input"><input  type="text" [value]="searchTerm" (input)="searchTerm = $event.target.value"/></div>
+  </div>
 </div>
 
 <div>
-  <app-articles></app-articles>
+  <app-articles *ngIf="!showSearch"></app-articles>
+  <search-articles *ngIf ="showSearch"></search-articles>
 </div>

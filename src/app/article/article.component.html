@@ -1,24 +1,24 @@
-<div class="article">
-  <div *ngIf="article">
-    <div >
-      <p>
-        <a  href="{{article.url}}">
-          {{article.title}}
-        </a><br />
-        <small>{{article.url}}</small>
-      </p>
-      <div>
-        {{article.score}} points by
-        <a href="">{{article.by}}</a><br />
-        {{ article.time | date:'short'}}
-        <a href="">
-          <span *ngIf="article.descendants !== 0"><br />
-            {{article.descendants}}
-            <span *ngIf="article.descendants === 1">comment</span>
-            <span *ngIf="article.descendants > 1">comments</span>
-          </span>
-          <span *ngIf="article.descendants === 0">discuss</span>
-        </a>
-      </div>
+<div class="article"  *ngIf="article">
+  <div>
+    <p>
+      <a href="{{article.url}}">
+        {{article.title}}
+      </a><br />
+      <small>{{article.url}}</small>
+    </p>
+    <div>
+      {{article.score}} points by
+      <span>{{article.by}}</span><br />
+      {{ article.time | date:'short'}}
+      <a href="">
+        <span *ngIf="article.descendants !== 0">
+          <br />
+          {{article.descendants}}
+          <span *ngIf="article.descendants === 1">comment</span>
+          <span *ngIf="article.descendants > 1">comments</span>
+        </span>
+        <span *ngIf="article.descendants === 0">discuss</span>
+      </a>
     </div>
   </div>
+</div>

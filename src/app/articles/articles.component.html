@@ -1,3 +1,4 @@
+
 <div class="articles">
   <ol>
     <li *ngFor="let storyId of storyIds | slice:start:stop">
@@ -7,8 +8,8 @@
 </div>
 <div class="articles-pagination">
   Story
-  <button [disabled]="start < 2" (click)="changePage(true)"> < {{start}}</button>
+  <button [disabled]="start < 2" (click)="changePage(true)"> < {{start +1}}</button>
   Through
-  <button [disabled]="stop >= storyIds.length" (click)="changePage(false)">{{stop-1}} > </button>
+  <button [disabled]="stop >= storyIds.length" (click)="changePage(false)">{{stop}} > </button>
   Of {{storyIds.length}}
 </div>

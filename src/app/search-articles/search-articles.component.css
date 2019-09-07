@@ -1,0 +1,16 @@
+.articles {
+  float: left;
+  height: 90vh;
+  width: 80%;
+  overflow: auto;
+}
+
+ol, li {
+  list-style: none;
+}
+
+.articles-pagination {
+  position: fixed;
+  bottom: 10px;
+  margin-left: 300px;
+}
